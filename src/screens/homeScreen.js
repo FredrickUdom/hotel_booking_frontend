@@ -2,13 +2,19 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 
 const Homescreen = () => {
-    const [rooms, setrooms] = useState([]);
+    const [rooms, setRooms] = useState([]);
+    const[loading, setLoading]=useState();
+    const[error,setError]=useState();
     const roomData = async ()=>{
         try {
+            setLoading(true)
             const data = (await this.axios.get('http://localhost:4000/api'));  // get the data from server
-            setrooms(data);   //set the state with the fetched data
+            setRooms(data);   //set the state with the fetched data
+            setLoading(false)
         } catch (error) {
+            setError(true)
             console.log(error);
+            setLoading(false)
         }
     };
    
