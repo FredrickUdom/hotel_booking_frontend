@@ -1,12 +1,26 @@
 import './App.css';
 import NavBar from './components/navBar/navBar';
-import Homescreen from './screen/homeScreen';
-import {BrowserRouter, Router, Link} from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Homescreen from './screens/homeScreen';
+// import { Routes } from 'react-router-dom/dist/umd/react-router-dom.development';
+
+
+
 function App() {
   return (
     <div className="App">
-        <NavBar/>
-        <Homescreen/>
+      <NavBar />
+
+      <BrowserRouter>
+        
+        <Routes>
+          <Route exact path="/home" element={<Homescreen/>} />
+        </Routes>
+        
+
+      </BrowserRouter>
+
+
     </div>
   );
 }
