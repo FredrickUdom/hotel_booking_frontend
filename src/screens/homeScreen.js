@@ -20,8 +20,11 @@ const Homescreen = () => {
    
     return ( 
         <div className="homescreen">
-            <h1>welcome to home screen</h1>
-            <h2>we have {rooms.length} rooms for you.</h2>
+           {loading ? (<h1>loading...</h1>): error ? (<h1>Error</h1>):(rooms.map(room=>{
+            return (
+                <div></div>
+            )
+           }))}
         </div>
      );
 
