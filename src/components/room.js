@@ -1,6 +1,12 @@
 const Room = ({room}) => {
     return ( 
-        <h1>{room.name}</h1>
+        <div className="row">
+            <div className="card mb-4">
+                <img src={room.imageurls[0]} className="smallimg"/>
+
+                
+            </div>
+        </div>
      );
 }
  
